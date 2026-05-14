@@ -178,9 +178,9 @@ kubectl config view --minify
 kubectl config get-clusters
 kubectl get ns # reads `~/.kube/config` or KUBECONFIG
 ...
-kubectl get pod -n {name}
-kubectl get ingress -n {name}
-kubectl get svc -n {name}
+kubectl get pod -n {namespace}
+kubectl get ingress -n {namespace}
+kubectl get svc -n {namespace}
 ```
 
 If you delete the project files you can recover them from etcd.
