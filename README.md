@@ -182,3 +182,16 @@ kubectl get pod -n {name}
 kubectl get ingress -n {name}
 kubectl get svc -n {name}
 ```
+
+If you delete the project files you can recover them from etcd.
+
+```bash
+kubectl get secret mongo-secret -o yaml > recovered-secret.yaml
+
+# unrecoverable
+kubectl delete -f mongo.yaml
+
+# then only github can recover it
+git pull
+kubectl apply -f .
+```
